@@ -7,8 +7,8 @@ export default function Home() {
         <header className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold tracking-tight">Photo Dater</h1>
           <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-            Adds the date your photo was taken to the bottom-right corner of
-            the image.
+            Adds the date your photo was taken to the bottom-right corner of the
+            image.
           </p>
         </header>
         <PhotoImport />

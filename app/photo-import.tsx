@@ -33,10 +33,13 @@ export default function PhotoImport() {
 
       {photo && (
         <p className="truncate text-sm text-zinc-600 dark:text-zinc-400">
-          Imported: <span className="font-medium text-foreground">{photo.name}</span>
+          Imported:{" "}
+          <span className="font-medium text-foreground">{photo.name}</span>
         </p>
       )}
-      {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
+      {error && (
+        <p className="text-sm text-red-600 dark:text-red-400">{error}</p>
+      )}
     </section>
   );
 }
