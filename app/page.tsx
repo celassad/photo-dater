@@ -7,7 +7,8 @@ export default function Home() {
         <header className="flex flex-col gap-2">
           <h1 className="text-2xl font-semibold tracking-tight">Photo Dater</h1>
           <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-            Make your photos ready to print.Automatically adds the date of your photo to the image. 
+            Make your photos ready to print. Automatically add the date of your
+            photo to the image.
           </p>
         </header>
         <PhotoImport />
