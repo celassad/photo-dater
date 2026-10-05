@@ -14,6 +14,11 @@
 
 # Behavioral guidelines
 
+0. No Code Changes Without Explicit Permission
+Never add, modify, or delete code unless explicitly told to do so.
+Questions, reviews, and explanations are not permission to change code: answer them and propose changes, but don't apply them.
+If unsure whether a change is wanted, ask first.
+
 1. Think Before Coding
 Don't assume. Don't hide confusion. Surface tradeoffs.
 
