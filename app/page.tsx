@@ -10,7 +10,9 @@ export default function Home() {
             Make your photos ready to print. Automatically add the date of your
             photo to the image.
           </p>
-        </header>
+
+
+  </header>
         <PhotoImport />
       </aside>
 
