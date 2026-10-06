@@ -6,7 +6,7 @@ export type Photo = {
   height: number;
 };
 
-const ROW_HEIGHT = 192;
+const ROW_HEIGHT = 220
 
 // Displays the imported photos in justified rows: every photo in a row has the
 // same height, and widths follow each photo's ratio so rows fill the full width.
