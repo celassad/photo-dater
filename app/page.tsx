@@ -5,6 +5,14 @@ import { useState } from "react";
 import PhotoGrid, { type Photo } from "./photo-grid";
 import PhotoImport from "./photo-import";
 
+// Reads the photo's displayed size (EXIF orientation applied)
+async function readSize(file: File) {
+  const bitmap = await createImageBitmap(file);
+  const size = { width: bitmap.width, height: bitmap.height };
+  bitmap.close();
+  return size;
+}
+
 export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
 
@@ -15,6 +23,7 @@ export default function Home() {
         url: URL.createObjectURL(file),
         // Undefined when the photo has no EXIF data or its format isn't supported.
         metadata: await exifr.parse(file).catch(() => undefined),
+        ...(await readSize(file)),
       })),
     );
     console.log("added", added);
