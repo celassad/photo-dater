@@ -10,7 +10,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
           key={photo.url}
           src={photo.url}
           alt={photo.file.name}
-          className="aspect-[3/2] w-full rounded-lg bg-zinc-200 object-contain shadow-sm dark:bg-zinc-800"
+          className="aspect-[4/3] w-full rounded-lg bg-zinc-200 object-contain shadow-sm dark:bg-zinc-800"
         />
       ))}
     </div>
