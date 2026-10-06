@@ -1,5 +1,6 @@
 "use client";
 
+import exifr from "exifr";
 import { useState } from "react";
 import PhotoGrid, { type Photo } from "./photo-grid";
 import PhotoImport from "./photo-import";
@@ -7,11 +8,16 @@ import PhotoImport from "./photo-import";
 export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
 
-  function addPhotos(files: File[]) {
-    const added = files.map((file) => ({
-      file,
-      url: URL.createObjectURL(file),
-    }));
+  async function addPhotos(files: File[]) {
+    const added = await Promise.all(
+      files.map(async (file) => ({
+        file,
+        url: URL.createObjectURL(file),
+        // Undefined when the photo has no EXIF data or its format isn't supported.
+        metadata: await exifr.parse(file).catch(() => undefined),
+      })),
+    );
+    console.log("added", added);
     setPhotos((current) => [...current, ...added]);
   }
 

@@ -1,4 +1,8 @@
-export type Photo = { file: File; url: string };
+export type Photo = {
+  file: File;
+  url: string;
+  metadata: Record<string, unknown> | undefined;
+};
 
 // Displays the imported photos in a responsive grid.
 export default function PhotoGrid({ photos }: { photos: Photo[] }) {
@@ -10,7 +14,7 @@ export default function PhotoGrid({ photos }: { photos: Photo[] }) {
           key={photo.url}
           src={photo.url}
           alt={photo.file.name}
-          className="aspect-[4/3] w-full rounded-lg bg-zinc-200 object-contain shadow-sm dark:bg-zinc-800"
+          className="w-full rounded-lg bg-zinc-200 object-contain shadow-sm dark:bg-zinc-800"
         />
       ))}
     </div>
